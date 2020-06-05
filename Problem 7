@@ -1,0 +1,25 @@
+import numpy as np
+#seed never repeats
+a = 2
+c = 4
+m = 19
+n=11
+x=np.ones(n)
+x[0] = 3
+results = []
+for i in range(n-1):
+     x[i+1] = (a*x[i]+c)%m
+     results.append(x[i]) 
+print(results)    
+#seed repeats
+b = 2
+d = 5
+z= 9
+N=11
+y=np.ones(n)
+y[0] = 3
+results_2 = []
+for i in range(n-1):
+     y[i+1] = (b*y[i]+d)%z
+     results_2.append(y[i]) 
+print(results_2)
