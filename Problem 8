@@ -1,0 +1,19 @@
+import numpy as np
+from scipy.integrate import solve_bvp
+import matplotlib.pyplot as plt
+def f(t,y):
+    return np.array([(y[1]), 4*(y[0]-t)])
+def B(y0, y1):
+    return np.array([y0[0]-0,(y1[0]-2)])
+x=np.linspace(0,1,100)
+y_0=np.zeros((2, x.size))
+Y=solve_bvp(f, B, x, y_0)
+plt.plot(Y.x, Y.y[0])
+plt.show()
+t=np.linspace(0,1,n)
+n=100
+y_s=np.zeros(n, dtype=float)
+for i in range(0,n):
+       y_s[i]=np.exp(2)*((np.exp(4)-1)**(-1))*(np.exp(2*t[i])- np.exp(-2*t[i]))+t[i]
+plt.plot(t,y_s, color='green')
+plt.show()
