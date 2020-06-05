@@ -1,0 +1,13 @@
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.random.random(1024)
+plt.plot(x)
+plt.show()
+dft= np.fft.fft(x)
+karr=np.fft.fftfreq(sample_data.size, d=1)
+print(np.amax(karr))
+print(np.amin(karr))
+spectra=abs(dft)*abs(dft)/(x.size)
+bin=5
+plt.hist(spectra,bin, facecolor='blue')
+plt.show()
