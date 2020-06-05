@@ -1,0 +1,7 @@
+import numpy as np
+a=np.array([[2, 1],[1, 0], [0, 1]])
+sv1=np.linalg.svd(a)[1]
+print(sv1)
+b=np.array([[1,1,0],[1,0,1],[0,1,1]])
+sv2=np.linalg.svd(b)[1]
+print(sv2)
